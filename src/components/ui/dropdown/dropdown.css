@@ -1,12 +1,12 @@
 :root {
   /* Colors ||*/
   --dropdown-text: #ffffff;
-  --dropdown-bg-dark: #0a0a0a;
-  --dropdown-bg-hover: #1a1a1a;
+  --dropdown-bg-dark: #000000;
+  --dropdown-bg-hover: #000000;
   --dropdown-bg-active: #2a2a2a;
   --dropdown-bg-active-hover: #3a3a3a;
   --dropdown-bg-highlight: rgba(255, 255, 255, 0.1);
-  --dropdown-border: #1a1a1a;
+  --dropdown-border: #5f5f5f;
   --dropdown-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   
   /* Typography ||*/
