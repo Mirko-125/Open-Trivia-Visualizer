@@ -1,12 +1,10 @@
 import { getErrorMessage } from "../helpers";
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-const DEFAULT_AMOUNT = import.meta.env.VITE_API_DEFAULT_AMOUNT;
+import { API_CONFIG } from "../config/api";
 
 export const fetchTriviaQuestions = async (params = {}) => { 
   // Single source of truth || 
   const { 
-    amount = DEFAULT_AMOUNT, 
+    amount = API_CONFIG.DEFAULT_AMOUNT, 
     category = "", 
     difficulty = "", 
     type = "" 
@@ -20,7 +18,7 @@ export const fetchTriviaQuestions = async (params = {}) => {
   if (difficulty) queryParams.append("difficulty", difficulty);
   if (type) queryParams.append("type", type);
 
-  const url = `${API_BASE_URL}/api.php?${queryParams}`;
+  const url = `${API_CONFIG.BASE_URL}/api.php?${queryParams}`;
 
   try {
     const response = await fetch(url);
@@ -53,7 +51,7 @@ export const fetchTriviaQuestions = async (params = {}) => {
 };
 
 export const fetchTriviaCategories = async () => {
-  const url = `${API_BASE_URL}/api_category.php`;
+  const url = `${API_CONFIG.BASE_URL}/api_category.php`;
 
   try {
     const response = await fetch(url);
