@@ -1,0 +1,148 @@
+
+:root {
+  --navbar-bg: #000;
+  --navbar-text: #ffffff;
+  --navbar-border: #fff;
+  --navbar-mobile-bg: #0a0a0a;
+  --navbar-mobile-border: #222;
+  --navbar-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --navbar-height: 5rem;
+}
+
+.navbar {
+  font-family: var(--navbar-font);
+  font-weight: 400; /* Inter Regular ||*/
+  font-size: 21px;
+  color: var(--navbar-text);
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  width: 100%;
+  height: var(--navbar-height);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.navbar-components {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  height: 100%;
+}
+
+.navbar-component {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-logo {
+  color: var(--navbar-text);
+  text-decoration: none;
+  font-family: var(--navbar-font);
+  font-weight: 600; /* Inter SemiBold ||*/
+  font-size: 1.5rem;
+  white-space: nowrap;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--navbar-text);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+  }
+
+  .navbar-container {
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 1;
+  }
+
+  .navbar-logo {
+    order: 2;
+    margin-left: auto;
+    font-size: 1.25rem;
+  }
+
+  .navbar-components {
+    order: 3;
+    flex: 100%;
+    flex-direction: column;
+    display: none;
+    gap: 0;
+    background: var(--navbar-mobile-bg);
+    overflow: hidden;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .navbar-components.open {
+    display: flex;
+  }
+
+  .navbar-component {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--navbar-mobile-border);
+  }
+
+  .navbar-component:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Animations ||*/
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.125rem;
+  }
+}

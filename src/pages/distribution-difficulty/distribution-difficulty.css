@@ -1,0 +1,14 @@
+:root {
+  --difficulty-heading-size: 2rem;
+  --difficulty-text-color: #777;
+  --difficulty-text-size: 1.1rem;
+}
+
+.distribution-difficulty h2 {
+  font-size: var(--difficulty-heading-size);
+}
+
+.distribution-difficulty p {
+  color: var(--difficulty-text-color);
+  font-size: var(--difficulty-text-size);
+}

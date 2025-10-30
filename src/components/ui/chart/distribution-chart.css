@@ -1,0 +1,135 @@
+:root {
+  /* Colors ||*/
+  --chart-bg: #f5f5f5;
+  --chart-title-color: #333;
+  --chart-text-color: #777;
+  --chart-white: #fff;
+  --chart-border-color: #ccc;
+  --chart-accent: #6243a1;
+
+  /* Dimensions ||*/
+  --chart-width-desktop: 55%;
+  --chart-width-mobile: 100%;
+  --chart-max-width: 1400px;
+  --chart-border-radius: 8px;
+  --chart-border-radius-small: 4px;
+  
+  /* Spacing ||*/
+  --chart-padding: 2rem;
+  --chart-padding-tablet: 1rem;
+  --chart-padding-mobile: 0.5rem;
+  --chart-margin: 2rem;
+  --chart-margin-mobile: 1rem;
+  --chart-gap: 3rem;
+  --chart-gap-mobile: 1rem;
+  
+  /* Typography ||*/
+  --chart-font: 'JetBrains Mono', monospace;
+  --chart-title-size: 1.8rem;
+  --chart-title-size-tablet: 1.4rem;
+  --chart-title-size-mobile: 1.2rem;
+  --chart-text-size: 1.1rem;
+  --chart-text-size-mobile: 1rem;
+  --chart-message-size: 1.2rem;
+  --chart-title-weight: 400;
+  
+  /* Borders ||*/
+  --chart-border-width: 4px;
+}
+
+.distribution-chart {
+  padding: var(--chart-padding);
+  background-color: var(--chart-bg);
+  border-radius: var(--chart-border-radius);
+  margin: var(--chart-margin) auto;
+  max-width: var(--chart-max-width);
+  width: var(--chart-width-desktop);
+  font-family: var(--chart-font);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.chart-title {
+  color: var(--chart-title-color);
+  margin-bottom: var(--chart-margin);
+  text-align: center;
+  font-family: var(--chart-font);
+  font-size: var(--chart-title-size);
+  font-weight: var(--chart-title-weight);
+}
+
+.no-data-message {
+  text-align: center;
+  color: var(--chart-text-color);
+  font-family: var(--chart-font);
+  font-size: var(--chart-message-size);
+  padding: 3rem;
+  background-color: var(--chart-white);
+}
+
+.chart-summary {
+  margin-top: var(--chart-margin);
+  padding: 1.5rem;
+  background-color: var(--chart-white);
+  border-left: var(--chart-border-width) solid var(--chart-accent);
+  display: flex;
+  gap: var(--chart-gap);
+  justify-content: center;
+  font-family: var(--chart-font);
+}
+
+.chart-summary p {
+  margin: 0;
+  color: var(--chart-title-color);
+  font-size: var(--chart-text-size);
+}
+
+.chart-summary strong {
+  color: var(--chart-accent);
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .distribution-chart {
+    padding: var(--chart-padding-tablet);
+    width: var(--chart-width-mobile) !important;
+    margin: var(--chart-margin) auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .chart-title {
+    font-size: var(--chart-title-size-tablet);
+    text-align: center;
+  }
+
+  .chart-summary {
+    flex-direction: column;
+    gap: var(--chart-gap-mobile);
+    text-align: center;
+  }
+
+  .chart-summary p {
+    font-size: var(--chart-text-size-mobile);
+  }
+}
+
+@media (max-width: 480px) {
+  .distribution-chart {
+    padding: var(--chart-padding-mobile);
+    margin: var(--chart-margin-mobile) auto;
+    width: calc(100% - (var(--chart-margin-mobile) * 2)) !important;
+    overflow-x: hidden;
+  }
+
+  .chart-title {
+    font-size: var(--chart-title-size-mobile);
+    margin-bottom: var(--chart-margin-mobile);
+    text-align: center;
+  }
+
+  .no-data-message {
+    padding: 2rem 1rem;
+    font-size: var(--chart-text-size-mobile);
+  }
+}

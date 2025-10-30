@@ -1,0 +1,14 @@
+:root {
+  --category-heading-size: 2rem;
+  --category-text-color: #777;
+  --category-text-size: 1.1rem;
+}
+
+.distribution-category h2 {
+  font-size: var(--category-heading-size);
+}
+
+.distribution-category p {
+  color: var(--category-text-color);
+  font-size: var(--category-text-size);
+}
