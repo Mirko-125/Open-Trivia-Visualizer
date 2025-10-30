@@ -1,6 +1,6 @@
 import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { TriviaProvider } from "./context";
 import { Loader } from "./components/ui";
 import App from "./App.jsx";
@@ -16,7 +16,7 @@ const DistributionDifficulty = lazy(() =>
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <TriviaProvider>
         <Suspense fallback={<Loader />}>
           <Routes>
@@ -37,6 +37,6 @@ createRoot(document.getElementById("root")).render(
           </Routes>
         </Suspense>
       </TriviaProvider>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>
 );
