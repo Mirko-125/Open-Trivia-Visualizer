@@ -34,6 +34,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: List dist contents (debug)
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Dist contents:"
+          ls -la dist/
+          echo "Dist/assets contents:"
+          ls -la dist/assets/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
